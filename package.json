@@ -1,0 +1,36 @@
+{
+  "name": "homework20a",
+  "version": "1.0.0",
+  "description": "Google Books React App",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmihalsky/Homework20A.git"
+  },
+  "author": "Jeff Mihalsky",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9"
+  },
+  "bugs": {
+    "url": "https://github.com/jmihalsky/Homework20A/issues"
+  },
+  "homepage": "https://github.com/jmihalsky/Homework20A#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "if-env": "^1.0.4",
+    "mongoose": "^5.4.6"
+  }
+}
